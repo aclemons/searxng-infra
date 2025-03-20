@@ -1,0 +1,22 @@
+services:
+  local-api-gateway:
+    image: bref/local-api-gateway:latest@sha256:b088b7f7a2ce0d288502469e6696088945dba12d0ce8c97f619a11ad5f8f1b33
+    environment:
+      - TARGET=gw:9002
+    ports:
+      - 8002:8000
+    extra_hosts:
+      - 'gw:host-gateway'
+  searxng:
+    image: searxng-lambda:latest
+    build:
+      context: .
+    command: run.sh
+    environment:
+      - AWS_LAMBDA_EXEC_WRAPPER=/opt/bootstrap
+      - AWS_LWA_PORT=8000
+      - AWS_LWA_READINESS_CHECK_PORT=8000
+      - AWS_LWA_READINESS_CHECK_PATH=/healthz
+      - SEARXNG_SECRET_KEY=${SEARXNG_SECRET_KEY:-0123456789}
+    ports:
+      - 9002:8080
