@@ -15,7 +15,7 @@ RUN curl --proto '=https' -sSf https://raw.githubusercontent.com/awslabs/aws-lam
 COPY --link --from=aws-lambda-adapter /lambda-adapter /opt/extensions/lambda-adapter
 
 # renovate: datasource=pypi depName=granian
-ARG GRANIAN_VERSION=2.1.1
+ARG GRANIAN_VERSION=2.2.1
 
 # hadolint ignore=DL3042,DL3013
 RUN --mount=type=cache,target=/root/.cache/pip \
