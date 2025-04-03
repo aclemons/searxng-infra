@@ -5,7 +5,7 @@ FROM public.ecr.aws/awsguru/aws-lambda-adapter:0.9.0@sha256:1c31bf4102ca63ef2082
 FROM searxng/searxng:2025.3.16-bbb2894b0@sha256:719399985d63294b08980ec23eb8bc2ab8d9ade3d101456abf18420fdd765f7d AS searxng
 
 
-FROM public.ecr.aws/lambda/python:3.13.2025.03.19.13@sha256:9c074a1eb11b6c44050ea8f86fbd7a20f8c623ea34dd69c35798bdfd98de4041
+FROM public.ecr.aws/lambda/python:3.13.2025.04.03.11@sha256:6163db246a3595eaa5f2acf88525aefa3837fa54c6c105a3b10d18e7183b2d2b
 
 # renovate: datasource=github-releases depName=awslabs/aws-lambda-web-adapter
 ARG AWS_LAMBDA_WEB_ADAPTER_VERSION=v0.9.0
