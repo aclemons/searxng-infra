@@ -8,7 +8,7 @@ FROM searxng/searxng:2025.3.16-bbb2894b0@sha256:719399985d63294b08980ec23eb8bc2a
 FROM public.ecr.aws/lambda/python:3.13.2025.04.03.11@sha256:6163db246a3595eaa5f2acf88525aefa3837fa54c6c105a3b10d18e7183b2d2b
 
 # renovate: datasource=github-releases depName=awslabs/aws-lambda-web-adapter
-ARG AWS_LAMBDA_WEB_ADAPTER_VERSION=v0.9.0
+ARG AWS_LAMBDA_WEB_ADAPTER_VERSION=v0.9.1
 
 RUN curl --proto '=https' -sSf https://raw.githubusercontent.com/awslabs/aws-lambda-web-adapter/refs/tags/$AWS_LAMBDA_WEB_ADAPTER_VERSION/layer/bootstrap -o /opt/bootstrap && chmod 0755 /opt/bootstrap
 
